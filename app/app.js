@@ -12,7 +12,7 @@ const state = {
   grade: 'all',
   query: '',
   hideSpoilers: true,
-  selectedId: 1,
+  selectedId: 17,
   tab: 'checklist',
 };
 

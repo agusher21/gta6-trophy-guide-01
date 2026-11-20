@@ -139,7 +139,7 @@ function sourcesHtml() {
 }
 
 export function renderNextUp(root, trophies, earned) {
-  const next = trophies.filter((t) => !earned.has(t.id)).slice(0, 5);
+  const next = trophies.filter((t) => !earned.has(t.id)).sort((a, b) => (a.stage - b.stage) || (a.id - b.id)).slice(0, 5);
   root.innerHTML = next.map((t) => `<li>${esc(t.name)}<span class="muted">Stage ${t.stage} · ${esc(t.grade)}${isMissable(t) ? ' · MISSABLE' : ''}</span></li>`).join('')
     || '<li>All 55 earned — Leonida Legend!</li>';
 }
